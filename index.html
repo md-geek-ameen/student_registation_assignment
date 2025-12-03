@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A comprehensive student registration system for managing student records with add, edit, and delete functionalities">
+  <meta name="keywords" content="student registration, student management, education system">
+  <meta name="author" content="Student Management Team">
+  <title>Student Registration System - Manage Student Records</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student Registration System</h1>
+      <p>Efficiently manage student records with our registration system. Add, edit, and delete student information with ease — data persists in your browser.</p>
+    </header>
+
+    <main>
+      <section class="form-section" aria-labelledby="formTitle">
+        <h2 id="formTitle">Register New Student</h2>
+
+        <form id="studentForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="studentName">Student Name *</label>
+              <input type="text" id="studentName" placeholder="Enter full name" required aria-describedby="nameError" />
+              <span class="error-message" id="nameError">Please enter a valid name (letters and spaces only)</span>
+            </div>
+
+            <div class="form-group">
+              <label for="studentId">Student ID *</label>
+              <input type="text" id="studentId" placeholder="Enter student ID" required aria-describedby="idError" />
+              <span class="error-message" id="idError">Please enter a valid ID (numbers only)</span>
+            </div>
+
+            <div class="form-group">
+              <label for="studentEmail">Email Address *</label>
+              <input type="email" id="studentEmail" placeholder="Enter email address" required aria-describedby="emailError" />
+              <span class="error-message" id="emailError">Please enter a valid email address</span>
+            </div>
+
+            <div class="form-group">
+              <label for="studentContact">Contact Number *</label>
+              <input type="text" id="studentContact" placeholder="Enter 10-digit number" required aria-describedby="contactError" />
+              <span class="error-message" id="contactError">Please enter a valid 10-digit number</span>
+            </div>
+          </div>
+
+          <div class="btn-container">
+            <button type="button" class="btn btn-secondary" id="cancelBtn" style="display:none">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Add Student</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="display-section" aria-labelledby="displayHeading">
+        <h2 id="displayHeading">Registered Students</h2>
+        <div class="table-container" id="tableContainer" role="region" aria-live="polite" tabindex="0">
+          <!-- Table or empty state inserted dynamically -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
